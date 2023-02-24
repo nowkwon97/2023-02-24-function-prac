@@ -7,20 +7,38 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="root"></div>
   
   <script>
-    // 빈 배열은 주석처리하여 명시하면 좋다.
-    let a = ["a",/*empty*/ ,"b"];
-    console.log(a.length);
-    console.dir(a);
-    console.log(a[1]);
-    // 마지막 쉼표는 무시(값에서 제외)한다.
-    // 후행 쉼표는 여러 줄 배열이 있을 때
-    // git diff를 깔끔하게 유지하는데 도움이 된다.
-    let b = [/*empty*/, "a",/*empty*/ ,"b",];
-    console.log(b.length);
-    console.dir(b);
+    let rubin = 1;
+    console.log(rubin)
+    rubin = "바보";
+    console.log(rubin);
+    // 함수의 기본형
+    // 함수 선언 문
+    // 소괄호( ) 사이에 있는 것도 변수이다.
+    // 매게변수
+    // { } 영역은 침범 못하는 안전한 영역이다.
+    function valueChange(a, b, c) {
+      // 숫자는 사칙연산이 되기 때문에 계산되어 return 된다.
+      // error 와 bug는 다르다.
+      // error는 틀린 것 bug는 개발자의 의도와 벗어난 것
+      if ( typeof(a) ==="string") {
+        // a의 type이 string이면 실행 아니면 아웃
+        if ( typeof(b) ==="string") {
+          // b type이 string이면 실행 아니면 아웃
+          if ( typeof(c) ==="string") {
+            // c type이 string이면 실행 아니면 아웃
+            return a + b + c;
+          }
+        }
+      }
+    }
+    // 호출과 할당을 해줘야 적용이 된다.
+    // calling 하면 return한다.
+    rubin = valueChange("피카츄", "라이츄", 3);
+    // valueChange의 return 을 rubin에 할당
+    // 함수의 변수 양식에 맞게 값을 할당해줘야한다.
+    console.log(rubin);
   </script>
 
 </body>

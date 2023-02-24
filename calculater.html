@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+  </div>
+
+  <script>
+    let root = document.getElementById('root');
+    function minusCalculaterReturnString(valueOne, valueTwo) {
+      // 매게 변수 valueOne, valueTwo 설정
+      if (valueOne > valueTwo) {
+        // 첫 번째 값이 두 번째 값보다 클 시
+        // 첫 번째 값 - 두 번째 값
+        result = valueOne - valueTwo;
+        return result + "입니다.";
+      }else {
+        // 첫 번째 값이 두 번재 값보다 작을 시
+        // 두 번째 값 - 첫 번째 값
+        result = valueTwo - valueOne;
+        return result + "입니다.";
+      }
+    }
+    console.log(typeof(minusCalculaterReturnString(10, 50)));
+    root.children[0].innerHTML = minusCalculaterReturnString(10, 50);
+    root.children[1].innerHTML = minusCalculaterReturnString(20, 50);
+    root.children[2].innerHTML = minusCalculaterReturnString(50, 30);
+    root.children[3].innerHTML = minusCalculaterReturnString(50, 40);
+  </script>
+</body>
+</html>

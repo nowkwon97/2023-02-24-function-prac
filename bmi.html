@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <h3></h3>
+  </div>
+  <!-- !  BMI = 체중(kg)/신장(m)^2 = 체중(lb)/신장(in)^2 *703 -->
+  <!-- !  m / 0.0254 = in -->
+  <!-- !  1kg = 2.2lb -->
+  <script>
+    let root = document.getElementById('root');
+    // meter를 Inch로 변환해 주는 함수
+    function meterToInch(meterValue) {
+      result = meterValue / 0.0254;
+      return result;
+    }
+    // kg을 lb로 변환해 주는 함수
+    function kgToLb(kgValue) {
+      result = kgValue * 2.2;
+      return result;
+    }
+    // height와 weight를 받음
+    // 외부함수 kgToLb, meterToInch에 weight, height 적용
+    // BMI 식 계산
+    function bmiCalculatorReturnString(kgWeight, mHeight) {
+      result = kgToLb(kgWeight) / meterToInch(mHeight)**2 * 703;
+      return "Your BMI is " + result;
+    }
+    console.log(bmiCalculatorReturnString(79, 1.8));
+    root.children[0].innerHTML = bmiCalculatorReturnString(79, 1.8);
+    console.log(typeof(bmiCalculatorReturnString(79, 1.8)));
+  </script>
+</body>
+</html>
