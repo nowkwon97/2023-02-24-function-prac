@@ -15,6 +15,8 @@
   <!-- !  1kg = 2.2lb -->
   <script>
     let root = document.getElementById('root');
+    let myWeight = 79;  // 몸무게 변수 초기화
+    let myHeight = 1.8; // 키 변수 초기화
     // meter를 Inch로 변환해 주는 함수
     function meterToInch(meterValue) {
       result = meterValue / 0.0254;
@@ -28,13 +30,28 @@
     // height와 weight를 받음
     // 외부함수 kgToLb, meterToInch에 weight, height 적용
     // BMI 식 계산
-    function bmiCalculatorReturnString(kgWeight, mHeight) {
+    function bmiCalculatorReturnNumber(kgWeight, mHeight) {
       result = kgToLb(kgWeight) / meterToInch(mHeight)**2 * 703;
-      return "Your BMI is " + result;
+      return result;
     }
-    console.log(bmiCalculatorReturnString(79, 1.8));
-    root.children[0].innerHTML = bmiCalculatorReturnString(79, 1.8);
-    console.log(typeof(bmiCalculatorReturnString(79, 1.8)));
+    // BMI 계산 결과 값을 h3태그.intterHTML에 할당
+    root.children[0].innerHTML = bmiCalculatorReturnNumber(myWeight, myHeight);
+
+    // h3태그(BMI결과 값) 에 따른 비만, 과체중, 정상, 저체중 판별
+    if (root.children[0].innerHTML > 25 ) {
+     console.log("비만도 결과 : " + "비만");
+    }else if (root.children[0].innerHTML > 23 ) {
+      console.log("비만도 결과 : " + "과체중");
+    }else if (root.children[0].innerHTML > 18.5 ) {
+      console.log("비만도 결과 : " + "정상");
+    }else if (root.children[0].innerHTML > 0 ) {
+      console.log("비만도 결과 : " + "저체중");
+    }
+
+    console.log(bmiCalculatorReturnNumber(myWeight, myHeight));
+    // BMI 결과 값의 type 확인
+    console.log(typeof(bmiCalculatorReturnNumber(myWeight, myHeight)));
+
   </script>
 </body>
 </html>
