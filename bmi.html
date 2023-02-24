@@ -15,8 +15,8 @@
   <!-- !  1kg = 2.2lb -->
   <script>
     let root = document.getElementById('root');
-    let myWeight = 79;  // 몸무게 변수 초기화
-    let myHeight = 1.8; // 키 변수 초기화
+    let myWeight = 79;  // 몸무게 변수 초기화(선언 및 할당)
+    let myHeight = 1.8; // 키 변수 초기화(선언 및 할당)
     // meter를 Inch로 변환해 주는 함수
     function meterToInch(meterValue) {
       result = meterValue / 0.0254;
@@ -48,9 +48,9 @@
       console.log("비만도 결과 : " + "저체중");
     }
 
-    console.log(bmiCalculatorReturnNumber(myWeight, myHeight));
+    console.log("Your BMI is " + bmiCalculatorReturnNumber(myWeight, myHeight));
     // BMI 결과 값의 type 확인
-    console.log(typeof(bmiCalculatorReturnNumber(myWeight, myHeight)));
+    console.log("Type of BMI: " + typeof(bmiCalculatorReturnNumber(myWeight, myHeight)));
 
   </script>
 </body>
