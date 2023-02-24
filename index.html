@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <script>
+    // 빈 배열은 주석처리하여 명시하면 좋다.
+    let a = ["a",/*empty*/ ,"b"];
+    console.log(a.length);
+    console.dir(a);
+    console.log(a[1]);
+    // 마지막 쉼표는 무시(값에서 제외)한다.
+    // 후행 쉼표는 여러 줄 배열이 있을 때
+    // git diff를 깔끔하게 유지하는데 도움이 된다.
+    let b = [/*empty*/, "a",/*empty*/ ,"b",];
+    console.log(b.length);
+    console.dir(b);
+  </script>
+
+</body>
+</html>
